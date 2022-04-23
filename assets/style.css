@@ -2,9 +2,7 @@ body {
     background-color: #efefef;
 }
 
-img {
-	/*display: block;
-    margin: auto;*/
+.middle {
     position: absolute;
     top: 40%;
     left: 50%;
