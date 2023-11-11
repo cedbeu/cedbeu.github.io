@@ -5,5 +5,5 @@ theme: jekyll-theme-minimal
 ---
 title: "Github"
 permalink: github.com/cedbeu
-redirect_from: github
+redirect_from: "/github"
 ---
