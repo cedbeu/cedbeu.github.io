@@ -11,6 +11,10 @@
     </script>
 
     <title>CBLab - Redirs - Github</title>
-    <meta http-equiv="refresh" content="0; url='http://github.com/cedbeu'" />
+    <meta charset="UTF-8">
+    <title>CBLabº - redirs - github</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta http-equiv="refresh" content="0; url='http://github.com/cedbeu?utm_medium=test&utm_source=test&utm_campaign=test'" />
   </head>
 </html>
