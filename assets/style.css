@@ -1,10 +1,125 @@
+/* note: SVG patterns
+         https://alistairshepherd.uk/writing/svg-generative-ridges
+         https://dev.to/bybydev/top-10-svg-pattern-generators-16h
+         https://bgjar.com/contour-line #eeeeee #cccccc
+         https://heropatterns.com graphpaper #0076ba #fefefe
+*/
+
+/* General body and layout */
 body {
-    background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eeeeee;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='2048' height='1536' preserveAspectRatio='none' viewBox='0 0 2048 1536'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='2048' height='1536' x='0' y='0' fill='rgba(238%2c 238%2c 238%2c 1)'%3e%3c/rect%3e%3cpath d='M0 60.14C109.89 24.98 228.6 278.99 384 261.12C490.04 248.92 417.9 71.39 522.89 0C609.9 -59.17 645.44 0 768 0C896 0 901.37 -21.64 1024 0C1093.37 12.24 1082.75 48.94 1152 67.76C1338.75 118.51 1342.51 126.3 1536 139.13C1726.51 151.76 1730.06 144.3 1920 118.69C2114.06 92.52 2202.24 -34.74 2304 35.56C2394.24 97.91 2304 209.78 2304 384C2304 535.74 2355.71 568.16 2304 687.48C2272.51 760.16 2137.6 731.9 2137.6 768C2137.6 802.6 2274.53 760.88 2304 828.88C2357.73 952.88 2304 990.44 2304 1152C2304 1344 2395.1 1435.1 2304 1536C2221.76 1627.1 2125.03 1550.67 1957.33 1536C1933.03 1533.87 1940.29 1502.4 1920 1502.4C1893.62 1502.4 1895.88 1533.21 1864 1536C1703.88 1550.01 1700 1536 1536 1536C1357.09 1536 1353.26 1546.3 1178.18 1536C1161.26 1535 1168.3 1518.83 1152 1513.41C963.21 1450.57 935.92 1496.4 768 1399.47C622.87 1315.69 645.89 1276.75 525.91 1152C453.89 1077.11 473.29 1004.54 384 1000.19C210.33 991.74 101.77 1187.93 0 1126.4C-90.23 1071.84 0 947.2 0 768C0 576 0 576 0 384C0 222.07 -82.11 86.42 0 60.14' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M768 610.46C696.21 610.46 621.71 691.85 621.71 768C621.71 838.88 696.03 904.53 768 904.53C837.44 904.53 904.53 838.7 904.53 768C904.53 691.67 837.62 610.46 768 610.46' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1536 743.49C1516.8 743.49 1500 756.65 1500 768C1500 778.67 1517.17 787.53 1536 787.53C1563.97 787.53 1593.6 778.85 1593.6 768C1593.6 756.83 1563.6 743.49 1536 743.49' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 1185.68C107.13 1185.68 363.05 1434.14 363.05 1536C363.05 1609.3 92.38 1625.14 0 1536C-89.14 1449.98 -74.39 1185.68 0 1185.68' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 175.81C87.18 175.81 186.65 247.14 278.71 384C378.65 532.57 330.1 565.79 384 746.67C387.31 757.79 393.14 758.24 393.14 768C393.14 773.37 389.51 773.7 384 776.93C192.94 888.9 126.34 1001.34 0 998.4C-65.66 996.87 0 883.2 0 768C0 576 0 576 0 384C0 279.9 -52.17 175.81 0 175.81' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M768 274.29C747.57 137.15 727.15 119.54 727.15 0C727.15 -17.61 747.58 0 768 0C789.34 0 791.57 -8.99 810.67 0C983.57 81.37 972.98 112.03 1152 180.71C1335.65 251.16 1341.07 249.7 1536 278.26C1725.07 305.96 1729.96 309.31 1920 293.24C2113.96 276.84 2170.21 181.71 2304 213.33C2362.21 227.09 2304 298.66 2304 384C2304 458.33 2356.58 500.1 2304 532.65C2164.58 618.96 2112.35 620.06 1920 621.71C1728.35 623.35 1712.91 503.29 1536 539.23C1352.91 576.43 1200 662.09 1200 768C1200 867.59 1361.11 936.91 1536 950.24C1721.11 964.34 1727.68 823.93 1920 822.86C2111.68 821.79 2176.93 837.03 2304 945.95C2368.93 1001.6 2304 1048.97 2304 1152C2304 1344 2372.57 1412.57 2304 1536C2265.91 1604.57 2183.14 1572.99 2090.67 1536C1991.14 1496.19 2012.75 1382.4 1920 1382.4C1799.41 1382.4 1798.38 1482.25 1664 1536C1606.38 1559.05 1600 1536 1536 1536C1466.18 1536 1454.35 1567.83 1396.36 1536C1262.35 1462.42 1290.68 1402.4 1152 1325.18C976.5 1227.46 954.85 1263.66 768 1186.13C746.16 1177.07 734.61 1169.07 734.61 1152C734.61 1134.93 751.14 1134.77 768 1117.87C942.77 942.77 1113.84 948.94 1117.87 768C1122.01 582 927.96 586.66 784.34 384C753.02 339.8 776.17 329.15 768 274.29' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 1354.11C55.63 1354.11 188.51 1483.11 188.51 1536C188.51 1574.06 47.97 1582.29 0 1536C-46.29 1491.34 -38.63 1354.11 0 1354.11' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 291.47C38.75 291.47 98.97 316.02 123.87 384C186.25 554.29 215.23 608.26 174.55 768C153.3 851.46 57.95 870.4 0 870.4C-29.32 870.4 0 819.2 0 768C0 576 0 576 0 384C0 337.74 -23.19 291.47 0 291.47' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M988.6 384C988.6 324.45 1065.58 293.65 1152 293.65C1294.97 293.65 1447.38 318.89 1447.38 384C1447.38 457.73 1286.09 571.32 1152 571.32C1056.7 571.32 988.6 463.28 988.6 384' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1248 1152C1248 1106.63 1394.99 1146.04 1536 1112.95C1730.99 1067.19 1725.14 1006.96 1920 994.29C2109.14 981.99 2147.66 998.81 2304 1063.02C2339.66 1077.67 2304 1107.51 2304 1152C2304 1344 2337.1 1377.1 2304 1536C2297.1 1569.1 2255.41 1558.38 2224 1536C2063.41 1421.58 2096.88 1321.63 1920 1262.4C1752.88 1206.43 1718.15 1335.52 1536 1305.6C1382.15 1280.32 1248 1202.95 1248 1152' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 1522.53C4.12 1522.53 13.96 1532.08 13.96 1536C13.96 1538.82 3.55 1539.43 0 1536C-3.43 1532.69 -2.86 1522.53 0 1522.53' stroke='rgba(204%2c 204%2c 204%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='2048' height='1536' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }
 
-.middle {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Logo is above the social icons */
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* Circle for positioning the icons */
+.circle {
+  --circle-rad: 130px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(2 * var(--circle-rad));
+  height: calc(2 * var(--circle-rad));
+  background-color:#f9f9f9; 
+  border: 3px solid #CCCCCC;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Circle is behind the icons and logo */
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230076ba' fill-opacity='0.27'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Container for social icons */
+.social-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /* Icons are above the circle and logo */
+  --arc-start: 0deg;
+  --arc-angle: 180deg; /* Adjust the arc angle for more or less curvature */
+  --arc-rad: 130px;
+  --total: 3; /* Total number of icons */
+}
+
+.social-images {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+}
+
+/* Style for social icons */
+.social-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+  transform-origin: center;
+  /* Distribute icons in an arc around the logo */
+  --index: 0;
+  transform: 
+    /* distributing icons on the arc */
+    rotate(calc( var(--arc-start) + (var(--arc-angle) / (var(--total) - 1) * var(--index))))
+    translate(0, calc(0px - var(--arc-rad)))
+    /* correct icon orientation */
+    rotate(calc(0deg - var(--arc-start) - (var(--arc-angle) / (var(--total) - 1) * var(--index))))
+  ;
+}
+
+/* Hover effect */
+.social-icon:hover {
+  transform:    
+    /* preserve icon position on the arc */
+    rotate(calc(var(--arc-start) + (var(--arc-angle) / (var(--total) - 1) * var(--index))))
+    translate(0, calc(0px - var(--arc-rad)))
+    
+    /* preserve icon orientation */
+    rotate(calc(-1 * ( var(--arc-start) + (var(--arc-angle)/(var(--total) - 1) * var(--index)))))
+    
+    scale(1.3)
+  ;
+  filter: grayscale(0);
 }

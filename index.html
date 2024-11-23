@@ -11,19 +11,41 @@
     </script>
     
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>CBLabº</title>
     
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
   </head>
 
   <body>
     <header></header>
     
-    <p class ='middle'>
-      <img src="/assets/logo-home.png" width=150></img>
-    </p>
+    <div class="container">
+      
+      <div class="logo">
+        <img src="./assets/logo-home.png" alt="Logo">
+      </div>
+      
+      <div class="circle"></div>
+      
+      <div class="social-icons" style="--arc-start: 60deg; --arc-angle: 80deg; --arc-rad: 130px;  --total:4">
+        <a href="./redirs/linkedin.html" title="LinkedIn" class="social-icon" style="--index: 0;" target="_blank">
+          <img src="./assets/third-party/icons/linkedin.png" alt="LinkedIn" class="social-images">
+        </a>
+        <a href="./redirs/stackoverflow.html" class="social-icon" style="--index: 1;" target="_blank">
+          <img src="./assets/third-party/icons/stackoverflow.png" alt="StackOverflow" class="social-images">
+        </a>
+        <a href="./redirs/researchgate.html" class="social-icon" style="--index: 2;" target="_blank">
+          <img src="./assets/third-party/icons/researchgate.png" alt="ResearchGate" class="social-images">
+        </a>
+        <a href="./redirs/github.html" class="social-icon icon-github" style="--index: 3;" target="_blank">
+          <img src="./assets/third-party/icons/github.png" alt="Github" class="social-images">
+        </a>
+      </div>
+      
+    </div>
     
     <footer></footer>
   </body>
